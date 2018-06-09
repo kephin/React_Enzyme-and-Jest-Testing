@@ -5,12 +5,12 @@ import App from 'components/App';
 import CommentBox from 'components/CommentBox';
 import CommentList from 'components/CommentList';
 
-it('shows a comment box', () => {
+describe('<App />', () => {
   const wrapper = shallow(<App />);
-  expect(wrapper.find(CommentBox).length).toEqual(1);
+  it('shows a comment box', () => {
+    expect(wrapper.find(CommentBox).length).toEqual(1);
+  });  
+  it('shows a comment list', () => {
+    expect(wrapper.find(CommentList).length).toEqual(1);
+  });
 });
-
-it('shows a comment list', () => {
-  const wrapper = shallow(<App />);
-  expect(wrapper.find(CommentList).length).toEqual(1);
-})
