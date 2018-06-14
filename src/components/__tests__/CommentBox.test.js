@@ -11,13 +11,13 @@ describe('<CommentBox />', () => {
   });
 
   it('can enter input into the textarea', () => {
-    wrapper.find('textarea').simulate('change', { target: { value: 'new comment' }});
+    wrapper.find('textarea').simulate('change', { target: { value: 'new comment' } });
     wrapper.update();
     expect(wrapper.find('textarea').prop('value')).toEqual('new comment');
-  })
+  });
 
   it('when the input is submitted, textarea should be emptied', () => {
-    wrapper.find('form').simulate('submit', { preventDefault(){} });
+    wrapper.find('form').simulate('submit', { preventDefault() {} });
     wrapper.update();
     expect(wrapper.find('textarea').prop('value')).toEqual('');
   });

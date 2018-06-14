@@ -1,7 +1,5 @@
 import React from 'react';
 
-export default () => {
-  return (
-    <div>Comment List</div>
-  );
-}
+export default () => (
+  <div>Comment List</div>
+);
