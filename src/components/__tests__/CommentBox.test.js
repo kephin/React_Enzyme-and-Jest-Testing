@@ -7,9 +7,9 @@ describe('<CommentBox />', () => {
   const mockSaveComment = jest.fn();
   const wrapper = shallow(<CommentBox saveComment={mockSaveComment} />);
 
-  it('shows a textarea and a button', () => {
+  it('shows a textarea and two buttons', () => {
     expect(wrapper.find('textarea').length).toEqual(1);
-    expect(wrapper.find('button').length).toEqual(1);
+    expect(wrapper.find('button').length).toEqual(2);
   });
 
   it('can enter input into the textarea and submit', () => {
