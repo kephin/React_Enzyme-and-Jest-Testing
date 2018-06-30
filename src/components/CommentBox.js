@@ -18,20 +18,29 @@ export class CommentBox extends Component {
     this.setState({ comment: '' });
   }
 
+  handleFetchComments = () => {
+    this.props.fetchComments();
+  }
+
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h4>Add a Comment</h4>
-        <textarea
-          value={this.state.comment}
-          onChange={this.handleChange}
-        />
-        <div>
-          <button>Submit Comment</button>
-        </div>
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <h4>Add a Comment</h4>
+          <textarea
+            value={this.state.comment}
+            onChange={this.handleChange}
+          />
+          <div>
+            <button>Submit Comment</button>
+          </div>
+        </form>
+        <button
+          className='fetch-comments'
+          onClick={this.handleFetchComments}
+        >Fetch Comments</button>
+      </div>
     );
   }
 }
-
 export default connect(null, actions)(CommentBox);
