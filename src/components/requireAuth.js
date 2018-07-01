@@ -17,11 +17,11 @@ export default ChildComponent => {
 
     render() {
       return (
-        <ChildComponent />
+        <ChildComponent {...this.props} />
       );
     }
   };
-  
+
   function mapStateToProps(state) {
     return { auth: state.auth };
   }
