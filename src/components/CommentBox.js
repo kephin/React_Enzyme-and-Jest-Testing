@@ -2,22 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import * as actions from 'actions';
+import requireAuth from 'components/requireAuth';
 
 export class CommentBox extends Component {
   state = {
     comment: '',
-  }
-
-  componentDidMount() {
-    this.shouldNavigateToHome();
-  }
-
-  componentDidUpdate() {
-    this.shouldNavigateToHome();
-  }
-
-  shouldNavigateToHome = () => {
-    !this.props.auth && this.props.history.push('/');
   }
 
   handleChange = event => {
@@ -56,8 +45,4 @@ export class CommentBox extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { auth: state.auth };
-}
-
-export default connect(mapStateToProps, actions)(CommentBox);
+export default connect(null, actions)(requireAuth(CommentBox));
